@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
 
 router.post('/api/submit', (req, res) => {
     const { song } = unflatten(req.body);
-    console.log(song);
 	if (song.name.includes('Not Polluting with the boys') || song.name.includes('ASTa la vista baby') || song.name.includes('The Galactic Rhymes') || song.name.includes('The Goose went wild')) {
 		return res.json({
 			'response': pug.compile('span Hello #{user}, thank you for letting us know!')({ user:'guest' })
